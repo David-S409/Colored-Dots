@@ -3,6 +3,8 @@ let colorData;
 let dots = [];
 let dot;
 let idList = {};
+
+//reduce number of dots by 0
 let reduction = 0;
 
 function setup() {
@@ -11,6 +13,7 @@ function setup() {
 }
 
 function setData(data) {
+  print("Data has been got");
   colorData = data;
 }
 

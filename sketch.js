@@ -3,7 +3,7 @@ let colorData;
 let dots = [];
 let dot;
 let idList = {};
-let reduction = 0;
+let reduction = 100;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -24,7 +24,10 @@ function draw() {
     dots[i].move();
   }
   listNames();
-  testDistance();
+  findClosest();
+  //checkClosest();
+
+
 }
 
 
@@ -53,18 +56,31 @@ function listNames() {
   }
 }
 
-function testDistance() {
+function findClosest() {
+
   for (let i = 0; i < dots.length; i++) {
     for (let j = 0; j < dots.length; j++) {
-    //  print(i, j);
       if (i != j) {
-      //  print("1nd if");
-        if (dots[i].measureDistance(dots[j]) < 65) {
-          stroke(255);
-           line(dots[i].x, dots[i].y, dots[j].x, dots[j].y)
-        //  print("2nd if");
+        if (dots[i].measureDistance(dots[j]) < 65 && !dots[i].nearestDots.includes(dots[j])) {
+          stroke(255,0,0);
+          line(dots[i].x, dots[i].y, dots[j].x, dots[j].y);
+          dots[i].nearestDots.push(dots[j]);
+          }
         }
+        dots[9].nearestDots.forEach(checkClosest);
       }
     }
   }
-}
+
+
+  function checkClosest(nearestDot) {
+    let indexOfNearest;
+    let distance = dist(dots[9].x, dots[9].y, nearestDot.x, nearestDot.y);
+    //for (let i = dots.length; i = 0; i--) {
+    if (distance > 70) {
+    //  indexOfNearest = dots[9].nearestDots.indexOf(nearestDot);
+
+    }
+   //print(distance);
+  //  }
+  }

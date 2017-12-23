@@ -27,4 +27,6 @@ class RedBeam {
       this.ySpeed *= -1;
     }
   }
+
+
 }

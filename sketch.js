@@ -35,6 +35,7 @@ function goBlue() {
   for (blueB of blueBeams) {
     blueB.paint();
     blueB.update();
+
   }
 }
 

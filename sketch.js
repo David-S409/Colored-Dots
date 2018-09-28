@@ -56,15 +56,21 @@ function listNames() {
   }
 }
 
-function testDistance() {
-  for (let i = 0; i < dots.length; i++) {
-    for (let j = 0; j < dots.length; j++) {
+function testDistance()
+{
+  for (let i = 0; i < dots.length; i++) 
+  {
+    for (let j = 0; j < dots.length; j++) 
+    {
     //  print(i, j);
       if (i != j) {
       //  print("1nd if");
-        if (dots[i].measureDistance(dots[j]) < 65) {
+        if (dots[i].measureDistance(dots[j]) < 65) 
+        {
           stroke(255);
            line(dots[i].x, dots[i].y, dots[j].x, dots[j].y)
+          dots[i].nearestDots.push(dots[j]);
+          dots[j].nearestDots.push(dots[i]);
         //  print("2nd if");
         }
       }

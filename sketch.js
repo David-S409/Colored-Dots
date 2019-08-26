@@ -56,11 +56,13 @@ function listNames() {
   }
 }
 
-function findDot(name) {
+unction findDot(name) {
   for (let i = 0; i < dots.length; i++) {
-    if (dots[i].name.equalsIgnoreCase(name)) {
+    if (dots[i].name.search(name) > -1) {
       console.log(dots[i].id);
       break;
+    } else {
+      console.log("Not found");
     }
   }
 }

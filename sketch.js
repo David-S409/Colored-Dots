@@ -56,6 +56,15 @@ function listNames() {
   }
 }
 
+function findDot(name) {
+  for (let i = 0; i < dots.length; i++) {
+    if (dots[i].name.toLowerCase().matches(name)) {
+      console.log(dots[i].id);
+      break;
+    }
+  }
+}
+
 function testDistance()
 {
   for (let i = 0; i < dots.length; i++) 

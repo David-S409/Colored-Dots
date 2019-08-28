@@ -56,7 +56,7 @@ function listNames() {
   }
 }
 
-unction findDot(name) {
+function findDot(name) {
   for (let i = 0; i < dots.length; i++) {
     if (dots[i].name.search(name) > -1) {
       console.log(dots[i].id);

@@ -61,10 +61,10 @@ function findDot(name) {
     if (dots[i].name.search(name) > -1) {
       console.log(dots[i].id);
       break;
-    } else {
-      console.log("Not found");
     }
+    
   }
+  console.log("Not found");
 }
 
 function testDistance()

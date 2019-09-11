@@ -14,7 +14,7 @@ class Dot {
   paint() {
     stroke(255);
     fill(this.hex);
-    ellipse(this.x, this.y, this._r);
+    ellipse(this.x, this.y, this.radius);
 
     noStroke();
     fill(255);

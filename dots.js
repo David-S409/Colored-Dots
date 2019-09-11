@@ -1,7 +1,5 @@
-
-
 class Dot {
-  constructor(_id, _name, _hex, _x, _y) {
+  constructor(_id, _name, _hex, _x, _y, _r = 25) {
     this.id = _id;
     this.name = _name;
     this.hex = _hex;
@@ -10,12 +8,13 @@ class Dot {
     this.xSpeed = random(-3,3);
     this.ySpeed = random(-5, 5);
     this.nearestDots = [];
+	this.radius = _r;
   }
 
   paint() {
     stroke(255);
     fill(this.hex);
-    ellipse(this.x, this.y, 25);
+    ellipse(this.x, this.y, this._r);
 
     noStroke();
     fill(255);
@@ -36,6 +35,10 @@ class Dot {
     this.x += this.xSpeed;
     this.y += this.ySpeed;
 
+  }
+  
+  changeSize(r) {
+	  this.r = r;
   }
 
   measureDistance(_other) {
